@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TableView from '../common/TableView';
-import '../styles/Dashboard.css';
+import '../../styles/Dashboard.css';
 
 const DoctorDashboard = () => {
   const [activeTab, setActiveTab] = useState('appointments');
@@ -36,7 +36,6 @@ const DoctorDashboard = () => {
             <TableView data={appointments} type="appointments" />
           </div>
         )}
-
         {activeTab === 'patients' && (
           <div>
             <h2>Patient Records</h2>
