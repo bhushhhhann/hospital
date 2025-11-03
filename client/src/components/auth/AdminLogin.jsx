@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Login.css';
+import '../../styles/Login.css';
 
 const AdminLogin = () => {
   const [username, setUsername] = useState('');
@@ -40,10 +40,9 @@ const AdminLogin = () => {
     <div className="login-container">
       <div className="login-box">
         <div className="login-header">
-          <h1>Hospital Management System</h1>
-          <h2>Admin Login</h2>
+          Hospital Management System
+          Admin Login
         </div>
-
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username *</label>
@@ -57,7 +56,6 @@ const AdminLogin = () => {
             />
             {errors.username && <span className="error-message">{errors.username}</span>}
           </div>
-
           <div className="form-group">
             <label htmlFor="password">Password *</label>
             <div className="password-input-group">
@@ -79,12 +77,10 @@ const AdminLogin = () => {
             </div>
             {errors.password && <span className="error-message">{errors.password}</span>}
           </div>
-
-          <button type="submit" className="btn-login">Login</button>
+          <button className="btn-login" type="submit">Login</button>
         </form>
-
         <div className="login-footer">
-          <p>Demo Credentials: admin / password123</p>
+          Demo Credentials: admin / password123
         </div>
       </div>
     </div>
