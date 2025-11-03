@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import TableView from '../common/TableView';
 import PatientForm from '../forms/PatientForm';
 import AppointmentForm from '../forms/AppointmentForm';
-import '../styles/Dashboard.css';
+import '../../styles/Dashboard.css';
 
 const ReceptionistDashboard = () => {
   const [activeTab, setActiveTab] = useState('appointments');
@@ -63,7 +63,6 @@ const ReceptionistDashboard = () => {
 
       <div className="dashboard-content">
         {showForm && renderForm()}
-
         {!showForm && (
           <>
             <div className="action-buttons">
@@ -78,14 +77,12 @@ const ReceptionistDashboard = () => {
                 </button>
               )}
             </div>
-
             {activeTab === 'appointments' && (
               <div>
                 <h2>Scheduled Appointments</h2>
                 <TableView data={appointments} type="appointments" />
               </div>
             )}
-
             {activeTab === 'patients' && (
               <div>
                 <h2>Registered Patients</h2>
