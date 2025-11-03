@@ -4,7 +4,7 @@ import DoctorForm from '../forms/DoctorForm';
 import PatientForm from '../forms/PatientForm';
 import AppointmentForm from '../forms/AppointmentForm';
 import BillingForm from '../forms/BillingForm';
-import '../styles/Dashboard.css';
+import '../../styles/Dashboard.css';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('patients');
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h1>Admin Dashboard</h1>
+        Admin Dashboard
         <p>Manage Doctors, Patients, Appointments, and Billing</p>
       </header>
 
@@ -78,7 +78,6 @@ const AdminDashboard = () => {
 
       <div className="dashboard-content">
         {showForm && renderForm()}
-
         {!showForm && (
           <>
             <div className="action-buttons">
@@ -103,7 +102,6 @@ const AdminDashboard = () => {
                 </button>
               )}
             </div>
-
             <TableView data={tableData} type={activeTab} />
           </>
         )}
