@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import AdminLogin from './components/Login/AdminLogin';
-import DoctorLogin from './components/Login/DoctorLogin';
-import ReceptionistLogin from './components/Login/ReceptionistLogin';
-import AdminDashboard from './components/Dashboard/AdminDashboard';
-import DoctorDashboard from './components/Dashboard/DoctorDashboard';
-import ReceptionistDashboard from './components/Dashboard/ReceptionistDashboard';
+import AdminLogin from './components/auth/AdminLogin';
+import DoctorLogin from './components/auth/DoctorLogin';
+import ReceptionistLogin from './components/auth/ReceptionistLogin';
+import AdminDashboard from './components/dashboards/AdminDashboard';
+import DoctorDashboard from './components/dashboards/DoctorDashboard';
+import ReceptionistDashboard from './components/dashboards/ReceptionistDashboard';
 import './styles/App.css';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userRole, setUserRole] = useState(null);
-
+  
   useEffect(() => {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
@@ -20,7 +20,7 @@ function App() {
       setUserRole(role);
     }
   }, []);
-
+  
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
@@ -28,7 +28,7 @@ function App() {
     setIsAuthenticated(false);
     setUserRole(null);
   };
-
+  
   return (
     <Router>
       <Routes>
