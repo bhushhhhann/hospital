@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+app {
+  min-height: 100vh;
+}
