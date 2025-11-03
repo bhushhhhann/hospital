@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import '../styles/TableView.css';
+import '../../styles/TableView.css';
 
 const TableView = ({ data, type }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -74,7 +74,7 @@ const TableView = ({ data, type }) => {
   };
 
   if (data.length === 0) {
-    return <div className="table-container"><p>No data available</p></div>;
+    return <div className="table-container">No data available</div>;
   }
 
   return (
@@ -92,7 +92,6 @@ const TableView = ({ data, type }) => {
             className="search-input"
           />
         </div>
-
         {(type === 'appointments' || type === 'billing') && (
           <div className="filter-box">
             <select
@@ -163,11 +162,9 @@ const TableView = ({ data, type }) => {
         >
           Previous
         </button>
-
         <div className="page-info">
           Page <span className="current-page">{currentPage}</span> of <span className="total-pages">{totalPages}</span>
         </div>
-
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
